@@ -1,0 +1,1 @@
+Santize is a package dedicated to functions surrounding sanitization of user-written queries to prevent data attacks.

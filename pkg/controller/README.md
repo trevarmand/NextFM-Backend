@@ -1,0 +1,1 @@
+The controller package reflects more traditional OO design, presenting a set of REST API endpoints that shield details of underlying backend services. 

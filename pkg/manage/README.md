@@ -1,0 +1,1 @@
+The manage package provides a set of functions for managing the content of the NextFM database. 
