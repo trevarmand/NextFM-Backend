@@ -5,9 +5,9 @@ import (
 
 	"github.com/trevarmand/nextfm-backend/pkg/lastfmhelper"
 	"github.com/trevarmand/nextfm-backend/pkg/util/aws"
-
+	"github.com/trevarmand/nextfm-backend/pkg/db"
 	// "github.com/trevarmand/nextfm-backend/pkg/util/log"
-	"github.com/trevarmand/nextfm-backend/pkg/manage"
+
 )
 
 func main() {
@@ -21,6 +21,6 @@ func main() {
 	fmt.Println(sess)
 
 
-	manage.GetConnection()
+	db.GetConnection()
 	lastfmhelper.FetchAccountAuthURL()
 }

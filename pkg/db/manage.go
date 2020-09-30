@@ -1,4 +1,4 @@
-package manage
+package db
 
 // Account
 // 816744749573
@@ -10,7 +10,6 @@ import (
 	"fmt"
 	"net/url"
 	"os"
-
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/service/rds/rdsutils"
 	"github.com/trevarmand/nextfm-backend/pkg/util/log"
@@ -35,13 +34,13 @@ func GetConnection() *AwsPsqlConnection {
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=5432", dbEndpoint, dbUser, dbPass, "nextfm")
 
 	db, connectErr := gorm.Open(postgres.Open(dsn), &gorm.Config{})
-	log.LogError("util:sql:AwsMySql:GetConnection", "failed to open DB connection", connectErr)
+	log.LogError("util:sql:AwsPsql:GetConnection", "failed to open DB connection", connectErr)
 
 	dbConn, err := db.DB()
-	log.LogError("util:sql:AwsMySql:GetConnection", "Failed to initialize DB object from connection", err)
+	log.LogError("util:sql:AwsPsql:GetConnection", "Failed to initialize DB object from connection", err)
 
 	pingFailure := dbConn.Ping()
-	log.LogError("util:sql:AwsMySql:GetConnection", "Failed to ping db to verify connection", pingFailure)
+	log.LogError("util:sql:AwsPsql:GetConnection", "Failed to ping db to verify connection", pingFailure)
 
 	return &AwsPsqlConnection{
 		dbConn: dbConn,
