@@ -1,10 +1,5 @@
 package db
 
-// Account
-// 816744749573
-// KMS key ID
-// 260e2020-5ba9-41e2-8d34-a3ae9aec2c15
-
 import (
 	"database/sql"
 	"fmt"
