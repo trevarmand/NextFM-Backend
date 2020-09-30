@@ -4,11 +4,7 @@ import (
 	"fmt"
 )
 
-type InfoMessage struct {
-	source, message string
-	data            map[string]interface{}
-}
 
-func LogInfo(infoMsg InfoMessage) {
-	fmt.Println(infoMsg)
+func LogInfo(source, message string, data map[string]interface{}) {
+	fmt.Println("\n<<INFO LOG>> SOURCE: ", source, " MESSAGE: ", message, "DATA:\n", data)
 }
