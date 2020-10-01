@@ -15,7 +15,7 @@ func GetSession() (*session.Session, error) {
 	sess, err := session.NewSession()
 
 	if err != nil {
-		log.LogError("util:aws:AwsSession:GetSession", err)
+		log.LogError("util:aws:AwsSession:GetSession", "Failed to initiate AWS session", err)
 		return nil, err
 	}
 	return sess, nil
