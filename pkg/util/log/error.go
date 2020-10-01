@@ -11,6 +11,10 @@ import (
 
 func LogError(source, contextMessage string, err error) {
 	if err != nil {
-		fmt.Println("Error! Source: ", source, "Context: ", contextMessage, "Message: ", err.Error())
+		fmt.Println("\n<<Error!>> Source: ", source, "Context: ", contextMessage, "Message: ", err.Error())
 	}
+}
+
+func LogOptimizationError(source, contextMessage string) {
+		fmt.Println("\n<<Optimization Error!>> Source: ", source, "Context: ", contextMessage)
 }
